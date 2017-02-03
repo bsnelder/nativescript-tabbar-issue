@@ -1,0 +1,18 @@
+<ActionBar title="My App" class="action-bar">
+</ActionBar>
+<TabView sdkExampleTitle sdkToggleNavButton>
+    <StackLayout class="page" *tabItem="{title: 'Squad'}">
+        <ListView [items]="items" class="list-group">
+            <template let-item="item">
+                <Label [nsRouterLink]="['/item', item.id]" [text]="item.name"
+                    class="list-group-item"></Label>
+            </template>
+        </ListView>
+    </StackLayout>
+    
+    <StackLayout *tabItem="{title: 'About'}">
+        <Label text="About"></Label>
+
+        <Button [nsRouterLink]="['/blank']" text="Navigate to subpage"></Button>
+    </StackLayout>
+</TabView>
