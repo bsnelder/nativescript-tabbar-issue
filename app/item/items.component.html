@@ -2,9 +2,7 @@
 </ActionBar>
 <TabView sdkExampleTitle sdkToggleNavButton>
     <StackLayout class="page" *tabItem="{title: 'Squad'}">
-        <router-outlet>
-            
-        </router-outlet>
+        <router-outlet></router-outlet>
         
         <ListView [items]="items" class="list-group">
             <template let-item="item">
@@ -14,9 +12,7 @@
     </StackLayout>
     
     <StackLayout *tabItem="{title: 'About'}">
-        <router-outlet>
-
-        </router-outlet>
+        <router-outlet></router-outlet>
         <Label text="About"></Label>
 
         <Button [nsRouterLink]="['/items/blank']" text="Navigate to subpage"></Button>
