@@ -8,10 +8,21 @@ import { BlankComponent } from "./blank/blank.component";
 
 const routes: Routes = [
     { path: "", redirectTo: "/items", pathMatch: "full" },
-    { path: "items", component: ItemsComponent },
-    { path: "item/:id", component: ItemDetailComponent },
-    { path: "blank", component: BlankComponent }
+    { 
+        path: "items", component: ItemsComponent,
+        children: [
+            { path: "item/:id", component: ItemDetailComponent },
+            { path: "blank", component: BlankComponent }
+        ]
+    },
 ];
+
+// const routes: Routes = [
+//     { path: "", redirectTo: "/items", pathMatch: "full" },
+//     { path: "items", component: ItemsComponent, },
+//     { path: "items/item/:id", component: ItemDetailComponent },
+//     { path: "items/blank", component: BlankComponent }
+// ];
 
 @NgModule({
     imports: [NativeScriptRouterModule.forRoot(routes)],
